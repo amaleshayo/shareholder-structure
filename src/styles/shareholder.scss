@@ -23,7 +23,7 @@ $bg: #ffffff;
 
 .shareholder-grid {
   display: grid;
-  grid-template-columns: 734px minmax(0, 1fr);
+  grid-template-columns: 734px 349px;
   gap: 32px;
   align-items: start;
 }
@@ -148,16 +148,25 @@ $bg: #ffffff;
 }
 
 .chart-card {
+  width: 610px;
+  height: 349px;
   border: 1px solid $border;
   border-radius: 16px;
   padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 1024px) {
-  .shareholder-grid { grid-template-columns: 1fr; }
-  .chart-card { padding: 20px; }
+  .shareholder-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
 }
