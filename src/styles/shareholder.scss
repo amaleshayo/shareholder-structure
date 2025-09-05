@@ -173,7 +173,6 @@ $bg: #ffffff;
   position: relative;
 }
 
-
 .chart-legend {
   width: 205px;
   margin-right: 8px;
@@ -285,25 +284,100 @@ $bg: #ffffff;
   border-top: 6.655px solid $border;
 }
 
-@media (max-width: 1024px) {
-  .shareholder-grid { grid-template-columns: 1fr; }
-
-  .chart-card {
+@media (max-width: 768px) {
+  .shareholder-card {
     width: 100%;
-    height: auto;
-    padding: 20px;
+    padding: 16px;
+    border-radius: 16px;
   }
 
+  .shareholder-title {
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .shareholder-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .shareholder-table .ant-table-container::after,
+  .shareholder-table .ant-table-thead::after {
+    display: none !important;
+  }
+
+  .shareholder-table .ant-table {
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+
+  .shareholder-table .ant-table colgroup col:nth-child(1) { width: 62% !important; }
+  .shareholder-table .ant-table colgroup col:nth-child(2) { width: 38% !important; }
+
+  .shareholder-table .ant-table-thead > tr > th {
+    padding: 12px;
+    font-size: 13px;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+
+  .shareholder-table .ant-table-tbody > tr > td {
+    padding: 12px;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  .shareholder-table .ant-table-thead > tr > th.col-holder,
+  .shareholder-table .ant-table-tbody > tr > td.col-holder {
+    white-space: normal !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    padding-left: 12px !important;
+    padding-right: 10px !important;
+  }
+
+  .shareholder-table .ant-table-thead > tr > th.col-percent,
+  .shareholder-table .ant-table-tbody > tr > td.col-percent {
+    white-space: nowrap !important;
+    text-align: left !important;
+    border-left: 1px solid $row-sep !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    min-width: 96px;
+  }
+
+  .updatedAt {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .chart-card { width: 100%; height: auto; padding: 16px; }
+  .chart-content {
+    width: 100%;
+    height: auto;
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
   .pie-box {
     width: 260px;
     height: 260px;
-    flex-basis: 260px;
+    flex: 0 0 260px;
     min-width: 260px;
+    margin: 0 auto;
   }
+  .chart-legend { width: 100%; padding-left: 0; margin-right: 0; }
+  .legend-row { height: 44px; gap: 10px; }
+}
 
-  .chart-legend {
-    width: 100%;
-    padding-left: 0;
-    border-left: none;
+@media (max-width: 400px) {
+  .pie-box {
+    width: 240px;
+    height: 240px;
+    flex-basis: 240px;
+    min-width: 240px;
   }
 }
