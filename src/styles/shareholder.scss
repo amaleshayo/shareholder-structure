@@ -150,11 +150,13 @@ $bg: #ffffff;
 }
 
 .chart-content {
-  flex: 1;
+  width: 546px;
+  height: 301px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 24px;
+  flex: none;
 }
 
 .pie-box {
@@ -164,14 +166,15 @@ $bg: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
 }
+
 
 .chart-legend {
   width: 205px;
+  margin-right: 8px;
+  padding-left: 24px;
   display: flex;
   flex-direction: column;
-  padding-left: 24px;
 }
 
 .legend-row {
