@@ -103,7 +103,7 @@ export default function ShareholderStructure() {
                         Дата последнего обновления этой структуры: {dayjs().format('DD.MM.YYYY')}
                     </div>
                 </div>
-
+                <hr className="mobile-divider" />
                 <div className="chart-card">
                     <DonutChart data={rows} withCard={false} />
                 </div>
