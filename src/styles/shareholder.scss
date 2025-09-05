@@ -151,6 +151,8 @@ $bg: #ffffff;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: visible;
 }
 
 .chart-content {
@@ -171,6 +173,7 @@ $bg: #ffffff;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: visible
 }
 
 .chart-legend {
@@ -391,4 +394,17 @@ $bg: #ffffff;
     flex-basis: 240px;
     min-width: 240px;
   }
+}
+
+.chart-tooltip--inside.is-bottom::after {
+  top: -5.655px; bottom: auto;
+  border-left: 5.656px solid transparent;
+  border-right: 5.656px solid transparent;
+  border-bottom: 5.655px solid #fff;
+}
+.chart-tooltip--inside.is-bottom::before {
+  top: -6.655px; bottom: auto;
+  border-left: 6.656px solid transparent;
+  border-right: 6.656px solid transparent;
+  border-bottom: 6.655px solid $border;
 }
