@@ -170,6 +170,7 @@ $bg: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 
@@ -197,6 +198,7 @@ $bg: #ffffff;
   border-radius: 50%;
   outline: 1px solid rgba(207, 214, 228, 1);
   flex: 0 0 10px;
+  transition: opacity 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
 .legend-text {
@@ -204,6 +206,83 @@ $bg: #ffffff;
   font-size: 14px;
   font-weight: 600;
   color: $ink;
+  transition: opacity 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+.recharts-sector { cursor: pointer; }
+.legend-row { cursor: pointer; }
+
+.chart-tooltip {
+  position: absolute;
+  z-index: 2;
+  background: #fff;
+  border: 1px solid $border;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 20px rgba(23, 35, 57, 0.12);
+  color: $ink;
+  font-family: 'Montserrat', sans-serif;
+  pointer-events: none;
+  transform: translate(-50%, -100%) translateY(-8px);
+
+  min-width: 165px;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  opacity: 0;
+  animation: tooltip-fade-in 0.25s ease-out forwards;
+}
+
+@keyframes tooltip-fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -90%) translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%) translateY(-8px);
+  }
+}
+
+.chart-tooltip__title {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.chart-tooltip__value {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.chart-tooltip--inside::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5.655px;
+  width: 0; height: 0;
+
+  border-left: 5.656px solid transparent;
+  border-right: 5.656px solid transparent;
+  border-top: 5.655px solid #fff;
+}
+
+.chart-tooltip--inside::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6.655px;
+  width: 0; height: 0;
+
+  border-left: 6.656px solid transparent;
+  border-right: 6.656px solid transparent;
+  border-top: 6.655px solid $border;
 }
 
 @media (max-width: 1024px) {
