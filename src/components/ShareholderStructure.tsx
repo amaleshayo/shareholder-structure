@@ -105,7 +105,7 @@ export default function ShareholderStructure() {
                 </div>
 
                 <div className="chart-card">
-                    <DonutChart data={rows} />
+                    <DonutChart data={rows} withCard={false} />
                 </div>
             </div>
         </div>
