@@ -6,11 +6,15 @@ $border: #e3e8ef;
 $bg: #ffffff;
 
 .shareholder-card {
+  width: 1440px;
+  min-height: 467px;
+  height: auto;
   background: $bg;
   border: 1px solid $border;
   border-radius: 16px;
   padding: 32px;
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
 }
 
 .shareholder-title {
