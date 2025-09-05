@@ -11,3 +11,8 @@
  export const HEIGHT = 301;
  export const OUTER = 145;
  export const INNER = 92;
+
+ export const TOOLTIP_ARROW = 5.656;     // высота треугольника из CSS
+ export const VIEWPORT_PAD  = 8;         // отступ от краёв экрана
+ export const TIP_FALLBACK_W = 180;      // дефолтный размер тултипа (если ref ещё пуст)
+ export const TIP_FALLBACK_H = 70;
